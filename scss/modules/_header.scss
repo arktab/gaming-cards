@@ -1,0 +1,202 @@
+.table {
+    height: 60vh;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+
+    .card {
+        transform-style: preserve-3d;
+        width: 8rem;
+        height: 13rem;
+        position: relative;
+        margin: 10px 20px;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        position: relative;
+        transition: all .8s;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-box-shadow: 10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+            -moz-box-shadow: 10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+            box-shadow: 10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+            transition: all .8s;
+        }
+
+
+        &:hover {
+            transform: rotateY(180deg);
+
+            &:before {
+                -webkit-box-shadow: -10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+                -moz-box-shadow: -10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+                box-shadow: -10px 10px 21px 2px rgba(0, 0, 0, 0.37);
+            }
+        }
+
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 2.5px;
+            background: repeating-linear-gradient(45deg,
+                #606dbc,
+                #606dbc 10px,
+                #465298 10px,
+                #465298 20px);
+            backface-visibility: hidden;
+
+        }
+
+        .front {
+            width: 100%;
+            height: 100%;
+            border-radius: 2.5px;
+            //backface-visibility: hidden;
+            transform: rotateY(180deg);
+            border: 1px solid black;
+
+        }
+
+        .top,
+        .bottom {
+            position: absolute;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+
+        .top {
+            top: 5%;
+            width: 1rem;
+            text-align: center;
+            position: relative;
+            backface-visibility: hidden;
+
+            &:before {
+                backface-visibility: hidden;
+                content: '';
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                top: 100%;
+                left: 0;
+            }
+        }
+
+        .left {
+            left: 5%;
+        }
+
+        .right {
+            right: 5%;
+        }
+
+        .bottom {
+            bottom: 5%;
+            width: 1rem;
+            text-align: center;
+            transform: rotateX(180deg) rotateY(180deg);
+            backface-visibility: hidden;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                top: 100%;
+                left: 0;
+            }
+        }
+
+        .center {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 30%;
+            height: 20%;
+        }
+    }
+}
+
+.spade {
+    .front {
+        background: #fff url('../images/001-poker.svg') no-repeat center center;
+        background-size: 90%;
+
+        .top {
+            &:before {
+                background: url('../images/001-poker.svg') no-repeat center center;
+            }
+        }
+
+        .bottom:before {
+            background: url('../images/001-poker.svg') no-repeat center center;
+        }
+
+    }
+}
+
+.diamond {
+    .front {
+        color: darkred;
+        background: #fff url('../images/004-diamond.svg') no-repeat center center;
+
+        .top:before {
+            background: url('../images/004-diamond.svg') no-repeat center center;
+        }
+
+
+        .bottom:before {
+            background: url('../images/004-diamond.svg') no-repeat center center;
+        }
+
+    }
+}
+
+.clover {
+    .front {
+        background: #fff url('../images/003-clover.svg') no-repeat center center;
+        background-size: 90%;
+
+        .top:before {
+            background: url('../images/003-clover.svg') no-repeat center center;
+        }
+
+        .bottom:before {
+            background: url('../images/003-clover.svg') no-repeat center center;
+        }
+
+    }
+}
+
+.heart {
+    .front {
+        color: darkred;
+        background: #fff url('../images/002-game.svg') no-repeat center center;
+        background-size: 90%;
+
+        .top:before {
+            background: url('../images/002-game.svg') no-repeat center center;
+        }
+
+        .bottom:before {
+            background: url('../images/002-game.svg') no-repeat center center;
+        }
+
+    }
+}
+.suspicious{
+    height: 40vh;
+}
